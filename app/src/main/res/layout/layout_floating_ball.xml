@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="80dp"
     android:layout_height="80dp"
-    android:background="@android:drawable/ic_dialog_email"
+    android:background="@drawable/bg_ball_shape">
 
     <VideoView
         android:id="@+id/ball_animation"
