@@ -43,7 +43,7 @@ interface SmsTaskDao {
     """)
     suspend fun getPhoneStatistics(): List<PhoneStats>
 
-    @Query("SELECT * FROM send_records WHERE phoneNumber LIKE '%' || :keyword || '%' GROUP BY phoneNumber")
+    @Query("SELECT phoneNumber, COUNT(*) AS totalCount, 0 AS successCount, 0 AS failCount, 0 AS replyCount FROM send_records WHERE phoneNumber LIKE '%' || :keyword || '%' GROUP BY phoneNumber")
     suspend fun searchPhones(keyword: String): List<PhoneStats>
 
     @Query("SELECT * FROM send_records WHERE phoneNumber = :phone ORDER BY timestamp DESC")
