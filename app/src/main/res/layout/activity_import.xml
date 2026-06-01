@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/etPhoneCol"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="号码所在列索引(0开始)"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/etMsgCol"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="短信内容所在列索引(0开始)"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btnImport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="选择Excel文件并导入" />
+</LinearLayout>
