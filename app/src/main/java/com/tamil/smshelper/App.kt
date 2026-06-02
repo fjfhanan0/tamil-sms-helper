@@ -8,8 +8,12 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class App : Application() {
+    
     override fun onCreate() {
         super.onCreate()
+        instance = this
+        
+        // 初始化默认短信模板
         CoroutineScope(Dispatchers.IO).launch {
             val dao = AppDatabase.getInstance(this@App).messageTemplateDao()
             if (dao.getAllTemplates().isEmpty()) {
@@ -28,5 +32,10 @@ class App : Application() {
                 dao.insertAll(templates)
             }
         }
+    }
+
+    companion object {
+        lateinit var instance: App
+            private set
     }
 }
